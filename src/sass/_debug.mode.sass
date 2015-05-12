@@ -1,0 +1,188 @@
+
+@mixin linearGradientFromTop($startColor, $endColor)
+	background: $startColor /* Old browsers */
+	background: -moz-linear-gradient(top,  $startColor 0%, $endColor 100%) /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $startColor), color-stop(100%, $endColor)) /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  $startColor 0%, $endColor 100%) /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  $startColor 0%, $endColor 100%) /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  $startColor 0%, $endColor 100%) /* IE10+ */
+	background: linear-gradient(to bottom,  $startColor 0%, $endColor 100%) /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$endColor}',GradientType=0 ) /* IE6-9 */
+
+
+@mixin linearGradientFromLeft($startColor, $endColor)
+	background-color: $startColor
+	background: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor))
+	background: -webkit-linear-gradient(left, $startColor, $endColor)
+	background: -moz-linear-gradient(left, $startColor, $endColor)
+	background: -ms-linear-gradient(left, $startColor, $endColor)
+	background: -o-linear-gradient(left, $startColor, $endColor)
+	background: linear-gradient(left, $startColor, $endColor)
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1')
+
+
+@mixin animateAll($time)
+	-webkit-transition: all $time ease-in-out;
+	-moz-transition: all $time ease-in-out;
+	-o-transition: all $time ease-in-out;
+	transition: all $time ease-in-out;
+
+
+@mixin clearfix
+	&:after 
+		content: " "
+		visibility: hidden
+		display: block
+		height: 0
+		clear: both
+
+
+
+
+body
+	margin: 0
+	padding: 0
+	
+header
+	@include linearGradientFromTop(#f68817, #f6c82c)
+
+.debug
+	.row
+		&:nth-child(1n+1)
+			[class|="large"],
+			[class|="medium"],
+			[class|="small"]
+				// For dev only
+				// border:
+				// 	right: 1px solid #000
+				padding:
+					top: 10px
+					bottom: 10px
+
+				&:nth-child(1n)
+					background: #476565
+
+				&:nth-child(2n)
+					background: #5f7e79 
+
+				&:nth-child(3n)
+					background: #84a3a5
+
+				&:nth-child(4n)
+					background: #7dc3c3 
+
+				&:nth-child(5n)
+					background: #c7e1d4 
+					
+				&:nth-child(6n)
+					background: #3cd2d3 
+
+
+				&:nth-child(7n)
+					background: #ba3725
+
+				&:nth-child(8n)
+					background: #bf3d27 
+
+				&:nth-child(9n)
+					background: #f68817
+
+				&:nth-child(10n)
+					background: #f6c82c 
+
+				&:nth-child(11n)
+					background: #ffe434 
+					
+				&:nth-child(12n)
+					background: #dbdaa1 
+
+
+
+		&:nth-child(3n+1)
+			[class|="large"],
+			[class|="medium"],
+			[class|="small"]
+				// For dev only
+				// border:
+				// 	right: 1px solid #000
+				padding:
+					top: 10px
+					bottom: 10px
+
+				&:nth-child(1n)
+					background: #476565
+
+				&:nth-child(2n)
+					background: #5f7e79 
+
+				&:nth-child(3n)
+					background: #84a3a5
+
+				&:nth-child(4n)
+					background: #7dc3c3 
+
+				&:nth-child(5n)
+					background: #c7e1d4 
+					
+				&:nth-child(6n)
+					background: #3cd2d3 
+
+
+		&:nth-child(4n+1)
+			[class|="large"],
+			[class|="medium"],
+			[class|="small"]
+				// For dev only
+				// border:
+				// 	right: 1px solid #000
+				padding:
+					top: 10px
+					bottom: 10px
+
+				&:nth-child(1n)
+					background: #eee8c4
+
+				&:nth-child(2n)
+					background: #d37488 
+
+				&:nth-child(3n)
+					background: #6a5460
+
+				&:nth-child(4n)
+					background: #b3313b 
+
+				&:nth-child(5n)
+					background: #69535f 
+					
+				&:nth-child(6n)
+					background: #31212b 	
+
+
+		&:nth-child(4n)
+			[class|="large"],
+			[class|="medium"],
+			[class|="small"]
+				// For dev only
+				// border:
+				// 	right: 1px solid #000
+				padding:
+					top: 10px
+					bottom: 10px
+
+				&:nth-child(1n)
+					background: #eee8c4
+
+				&:nth-child(2n)
+					background: #d37488 
+
+				&:nth-child(3n)
+					background: #6a5460
+
+				&:nth-child(4n)
+					background: #b3313b 
+
+				&:nth-child(5n)
+					background: #69535f 
+					
+				&:nth-child(6n)
+					background: #31212b 

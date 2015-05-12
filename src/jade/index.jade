@@ -1,0 +1,30 @@
+html
+	head
+		title Editor
+		
+		link(rel="stylesheet", href="css/debug.css")
+		link(rel="stylesheet", href="css/style.css")
+	body.debug
+
+		header
+			h1 FE-Editor
+			p By 
+				a(href="http://fedojo.com") fedojo.com
+			p Easy grid based on 
+				a(href="http://dev.fedojo.com/multigrid.css/") MutliGrid.css
+			
+			select#elementsList
+			button#addElement Add element
+
+		#editorWrapper.row
+
+		footer
+
+
+
+		script(src="js/elements.GridElements.js")
+
+		script(src="js/Page.js")
+		script(src="js/Element.js")
+		
+		script(src="js/init.js")

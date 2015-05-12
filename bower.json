@@ -1,0 +1,21 @@
+{
+  "name": "fe-editor",
+  "version": "0.0.0",
+  "authors": [
+    "piotrsikora <fedojo.com@gmail.com>"
+  ],
+  "description": "Front End Editor",
+  "license": "MIT",
+  "homepage": "fedojo.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "UsefullMixins.sass": "git@github.com:fedojo/usefullmixins-sass.git",
+    "MultiGrid.css": "git@github.com:fedojo/multigrid-css.git"
+  }
+}
