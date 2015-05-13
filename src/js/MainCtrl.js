@@ -1,50 +1,70 @@
 class MainCtrl {
 	constructor() {
-		let page = new Page(),
-		$s = document.getElementById("elementsList"),
-		$b = document.getElementById("addElement");
+		this.page = new Page('editorWrapper');
 
+		this.elementsJSON = {};
+		this.elementsHTML = {};
 
+		this.$elementsList = document.getElementById("elementsList");
+		this.$btnAddElement = document.getElementById("addElement");
+		this.$btnGetJSON = document.getElementById("getJSON");
+		this.$btnGetHTML = document.getElementById("getHTML");
+		this.$btnAddElements = document.getElementById("addElements");
+		this.$inputContent = document.getElementById("elementContent");
+
+		this.$el = document.querySelector('div');
 
 		for (var key in elements) {
-			$s.innerHTML += '<option value="'+key+'">'+elements[key].name+'</option>';
+			this.$elementsList.innerHTML += '<option value="'+key+'">'+elements[key].name+'</option>';
 		}
 
-		function addOption(e) {
-			let ne = new Element({prefix: 'cus'});
+		this.bindEvents();
+	}
 
-			page.addElement(elements[$s.value].template);
-		}
+	bindEvents() {
+		this.$el.addEventListener("click", (function(event) { this.removeElement(event) }).bind(this));
+		// this.$el.addEventListener("click", this.removeElement(event) );
 
-		$b.addEventListener("click", addOption);
+		this.$btnAddElement.addEventListener("click", (function(event) { this.addElement() }).bind(this));
+		this.$btnAddElement.addEventListener("click", (function(event) { this.addElementsRandomly() }).bind(this));
+		this.$btnGetJSON.addEventListener("click", (function(event) { this.getJSON() }).bind(this));
+		this.$btnGetHTML.addEventListener("click", (function(event) { this.getHTML() }).bind(this));
+	}
+
+	addElementsRandomly() {
+
+	}
+
+	removeElement(e) {
+		console.log(e);
+
+	}
+
+	addElement(e) {
+
+		console.log();
+		let newElement = new Element();
+		newElement.createFromTpl(elements[this.$elementsList.value].template, '');
 
 
-		$s.addEventListener("click", function(e) {
-			console.log("clicked");
-		// Get the CSS classes
-		/*
-		var classes = e.target.className.split(" ");
-		// Search for the CSS class!
-		if(classes) {
-			// For every CSS class the element has...
-			for(var x = 0; x < classes.length; x++) {
-				// If it has the CSS class we want...
-				if(classes[x] == "classA") {
-					// Bingo!
-					console.log("Anchor element clicked!");
-					
-					
-					// Now do something here....
-					
-					
-			
 
-				}
-			}
-		}*/
-		
-	//}
-		});
+		this.page.addElement();
+		// console.log(document.querySelectorAll("[data-prefix]"));
+	}
+
+	showElementOptions() {
+		console.log('Show element options');
+	}
+
+	getHTML() {
+		let element = document.getElementById('editorWrapper');
+
+		return element.innerHTML;
+	}
+
+	getJSON() {
+		return "JSON";
+
 	}
 
 	generatePrefix() {
@@ -53,7 +73,3 @@ class MainCtrl {
 		return prefix;
 	}
 }
-
-
-
-

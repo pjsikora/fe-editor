@@ -9,18 +9,38 @@ var Element = (function () {
         _classCallCheck(this, Element);
 
         this.elements = [];
+        this.$el;
         this.selector = '';
         this.$addElement;
         this.$removeElement;
         this.$editElement;
 
-        this.elementPrefix = config.prefix;
+        // this.elementPrefix = config.prefix ? config.prefix : '000';
     }
 
     _createClass(Element, [{
+        key: 'createFromTpl',
+        value: function createFromTpl(template, content) {
+
+            var tmpEl = document.createElement('div');
+            console.log(tmpEl);
+            tmpEl.innerHTML = template;
+            console.log(tmpEl);
+            console.log(tmpEl.innerHTML);
+            console.log(tmpEl.outerHTML);
+            tmpEl = tmpEl.innerHTML;
+
+            console.log(tmpEl);
+            // console.log(el.innerHTML);
+
+            // tmpEl.setAttribute("data-prefix", 'settedPrefix');
+            console.log(tmpEl);
+            return this.$el;
+        }
+    }, {
         key: 'bindEvents',
         value: function bindEvents() {
-            this.$addElement.addEventListener('click');
+            this.$addElement.addEventListener();
             this.$removeElement.addEventListener();
             this.$editElement.addEventListener();
         }
