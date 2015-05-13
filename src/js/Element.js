@@ -1,10 +1,12 @@
 class Element {
-    constructor() {
+    constructor(config) {
         this.elements = [];
         this.selector = '';
         this.$addElement;
         this.$removeElement;
         this.$editElement;
+
+        this.elementPrefix = config.prefix;
     }
 
     bindEvents() {
@@ -13,7 +15,7 @@ class Element {
         this.$editElement.addEventListener();
     }
 
-    addElement() {}
+    prepareElement() {
 
-    removeElement() {}
+    }
 }

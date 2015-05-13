@@ -5,7 +5,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var Element = (function () {
-    function Element() {
+    function Element(config) {
         _classCallCheck(this, Element);
 
         this.elements = [];
@@ -13,6 +13,8 @@ var Element = (function () {
         this.$addElement;
         this.$removeElement;
         this.$editElement;
+
+        this.elementPrefix = config.prefix;
     }
 
     _createClass(Element, [{
@@ -23,11 +25,8 @@ var Element = (function () {
             this.$editElement.addEventListener();
         }
     }, {
-        key: 'addElement',
-        value: function addElement() {}
-    }, {
-        key: 'removeElement',
-        value: function removeElement() {}
+        key: 'prepareElement',
+        value: function prepareElement() {}
     }]);
 
     return Element;
