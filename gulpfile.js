@@ -40,7 +40,7 @@ gulp.task('watch', function() {
 	gulp.watch(path.jade, ['jade']);
 	gulp.watch(path.js, ['babel']);
 
-	gulp.run('webserver');
+	// gulp.run('webserver');
 });
 
 

@@ -10,14 +10,12 @@ var MainCtrl = (function () {
 
 		this.page = new Page("editorWrapper");
 
-		this.elementsJSON = {};
-		this.elementsHTML = {};
-
 		this.$elementsList = document.getElementById("elementsList");
 		this.$btnAddElement = document.getElementById("addElement");
 		this.$btnGetJSON = document.getElementById("getJSON");
 		this.$btnGetHTML = document.getElementById("getHTML");
 		this.$btnAddElements = document.getElementById("addElements");
+
 		this.$inputContent = document.getElementById("elementContent");
 
 		this.$el = document.querySelector("div");
@@ -35,8 +33,6 @@ var MainCtrl = (function () {
 			this.$el.addEventListener("click", (function (event) {
 				this.removeElement(event);
 			}).bind(this));
-			// this.$el.addEventListener("click", this.removeElement(event) );
-
 			this.$btnAddElement.addEventListener("click", (function (event) {
 				this.addElement();
 			}).bind(this));
@@ -55,19 +51,17 @@ var MainCtrl = (function () {
 		value: function addElementsRandomly() {}
 	}, {
 		key: "removeElement",
-		value: function removeElement(e) {
-			console.log(e);
-		}
+		value: function removeElement(e) {}
 	}, {
 		key: "addElement",
 		value: function addElement(e) {
-
-			// console.log();
 			var newElement = new Element();
 			newElement.createFromTpl(elements[this.$elementsList.value].template, "");
 
-			this.page.addElement();
-			// console.log(document.querySelectorAll("[data-prefix]"));
+			// console.log();
+
+			this.page.addElement(elements[this.$elementsList.value].template);
+			this.page.redrawStructure();
 		}
 	}, {
 		key: "showElementOptions",
@@ -75,11 +69,19 @@ var MainCtrl = (function () {
 			console.log("Show element options");
 		}
 	}, {
-		key: "getHTML",
-		value: function getHTML() {
-			// let element = document.getElementById('editorWrapper');
-
-			return "";
+		key: "setElementsHTML",
+		value: function setElementsHTML(html) {
+			this.page.setHTMLStructure(html);
+		}
+	}, {
+		key: "redraw",
+		value: function redraw() {
+			this.page.redrawStructure();
+		}
+	}, {
+		key: "getElementsHTML",
+		value: function getElementsHTML() {
+			return this.page.getHTMLStructure();
 		}
 	}, {
 		key: "getJSON",
@@ -89,7 +91,6 @@ var MainCtrl = (function () {
 	}, {
 		key: "generatePrefix",
 		value: function generatePrefix() {
-			// can be based on timestamp for smalle cont of duplications
 			var prefix = Date.now() / 1000;
 			return prefix;
 		}

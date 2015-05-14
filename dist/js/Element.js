@@ -9,7 +9,7 @@ var Element = (function () {
         _classCallCheck(this, Element);
 
         this.elements = [];
-        this.$el;
+        this.elHTML;
         this.selector = '';
         this.$addElement;
         this.$removeElement;
@@ -21,21 +21,12 @@ var Element = (function () {
     _createClass(Element, [{
         key: 'createFromTpl',
         value: function createFromTpl(template, content) {
-
             var tmpEl = document.createElement('div');
-            console.log(tmpEl);
             tmpEl.innerHTML = template;
-            console.log(tmpEl);
-            console.log(tmpEl.innerHTML);
-            console.log(tmpEl.outerHTML);
             tmpEl = tmpEl.innerHTML;
 
-            console.log(tmpEl);
-            // console.log(el.innerHTML);
-
-            // tmpEl.setAttribute("data-prefix", 'settedPrefix');
-            console.log(tmpEl);
-            return this.$el;
+            this.elHTML = template; // TODO Recreate it after parsed with template
+            return this.elHTML;
         }
     }, {
         key: 'bindEvents',

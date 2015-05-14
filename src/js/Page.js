@@ -10,23 +10,34 @@ class Page {
       return 1;
     }
 
-    loadStructure() {}
+    loadStructure() {
+
+    }
 
     addElement(elementString) {
       this.HTMLStructure += elementString;
-    	// this.contentKeeper.innerHTML += elementString;
     }
 
-    removeElement() {}
+    removeElement() {
 
-    getJSONstructure() {}
-    setJSONstructure() {}
+    }
 
-    getHTMLstructure() {
+    getJSONStructure() {
+
+    }
+    setJSONStructure() {
+
+    }
+
+    redrawStructure() {
+      this.contentKeeper.innerHTML = this.HTMLStructure;
+    }
+
+    getHTMLStructure() {
       return this.HTMLStructure;
     }
 
-    setHTMLstructure(structure) {
+    setHTMLStructure(structure) {
       this.HTMLStructure = structure;
     }
 

@@ -26,25 +26,29 @@ var Page = (function () {
     key: 'addElement',
     value: function addElement(elementString) {
       this.HTMLStructure += elementString;
-      // this.contentKeeper.innerHTML += elementString;
     }
   }, {
     key: 'removeElement',
     value: function removeElement() {}
   }, {
-    key: 'getJSONstructure',
-    value: function getJSONstructure() {}
+    key: 'getJSONStructure',
+    value: function getJSONStructure() {}
   }, {
-    key: 'setJSONstructure',
-    value: function setJSONstructure() {}
+    key: 'setJSONStructure',
+    value: function setJSONStructure() {}
   }, {
-    key: 'getHTMLstructure',
-    value: function getHTMLstructure() {
+    key: 'redrawStructure',
+    value: function redrawStructure() {
+      this.contentKeeper.innerHTML = this.HTMLStructure;
+    }
+  }, {
+    key: 'getHTMLStructure',
+    value: function getHTMLStructure() {
       return this.HTMLStructure;
     }
   }, {
-    key: 'setHTMLstructure',
-    value: function setHTMLstructure(structure) {
+    key: 'setHTMLStructure',
+    value: function setHTMLStructure(structure) {
       this.HTMLStructure = structure;
     }
   }]);

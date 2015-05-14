@@ -8,7 +8,10 @@
   describe("Page", function () {
     it("Returns HTML", function () {
       var page = new Page();
-      expect(mc.init).toBe(1);
+      page.setHTMLStructure = "HTML"
+      expect(mc.getHTMLStructure).toBe("HTML");
     });
+
+    
   });
 })();
