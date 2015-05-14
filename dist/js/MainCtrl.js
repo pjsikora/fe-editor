@@ -14,6 +14,7 @@ var MainCtrl = (function () {
 		this.$btnAddElement = document.getElementById("addElement");
 		this.$btnGetJSON = document.getElementById("getJSON");
 		this.$btnGetHTML = document.getElementById("getHTML");
+		this.$btnClearHTML = document.getElementById("clearAll");
 		this.$btnAddElements = document.getElementById("addElements");
 
 		this.$inputContent = document.getElementById("elementContent");
@@ -55,12 +56,14 @@ var MainCtrl = (function () {
 	}, {
 		key: "addElement",
 		value: function addElement(e) {
-			var newElement = new Element();
-			newElement.createFromTpl(elements[this.$elementsList.value].template, "");
+			var newElement = new Element(),
+			    option = this.$elementsList.value,
+			    tpl = elements[option].template,
+			    prefix = Date.now(),
+			    content = this.$inputContent.value ? this.$inputContent.value : "Empty",
+			    el = newElement.createFromTpl(tpl, { prefix: prefix, content: content }); // get
 
-			// console.log();
-
-			this.page.addElement(elements[this.$elementsList.value].template);
+			this.page.addElement(el);
 			this.page.redrawStructure();
 		}
 	}, {
@@ -94,6 +97,9 @@ var MainCtrl = (function () {
 			var prefix = Date.now() / 1000;
 			return prefix;
 		}
+	}, {
+		key: "clearHTML",
+		value: function clearHTML() {}
 	}]);
 
 	return MainCtrl;

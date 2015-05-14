@@ -1,4 +1,26 @@
 let elements = {
+	"fedojo_1of12": {
+		"prefix": "fedojo_1of12",
+		"name": "1of12",
+		"hidden": false,
+		"visible_period_from": "",
+		"visible_period_to": "",
+		"content": "",
+
+		"template": '<div class="large-1of12" data-prefix="<% this.prefix %>"><% this.content %></div>'
+	},
+
+	"fedojo_1of11": {
+		"prefix": "fedojo_1of11",
+		"name": "1of11",
+		"hidden": false,
+		"visible_period_from": "",
+		"visible_period_to": "",
+		"content": "",
+
+		"template": '<div class="large-1of11" data-prefix="<% this.prefix %>"><% this.content %></div>'
+	},
+
 	"fedojo_1of10": {
 		"prefix": "fedojo_1of10",
 		"name": "1of10",
@@ -6,7 +28,8 @@ let elements = {
 		"visible_period_from": "",
 		"visible_period_to": "",
 		"content": "",
-		"template": '<div class="large-1of10" data-prefix="###prefix###">###content###</div>'
+
+		"template": '<div class="large-1of10" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	},
 
 	"fedojo_1of9": {
@@ -16,7 +39,7 @@ let elements = {
 		"visible_period_from": "",
 		"visible_period_to": "",
 		"content": "",
-		"template": '<div class="large-1of9">large-1of9</div>'
+		"template": '<div class="large-1of9" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	},
 
 	"fedojo_1of8": {
@@ -26,7 +49,7 @@ let elements = {
 		"visible_period_from": "",
 		"visible_period_to": "",
 		"content": "",
-		"template": '<div class="large-1of8">large-1of8</div>'
+		"template": '<div class="large-1of8" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	},
 
 	"fedojo_1of7": {
@@ -36,7 +59,7 @@ let elements = {
 		"visible_period_from": "",
 		"visible_period_to": "",
 		"content": "",
-		"template": '<div class="large-1of7">large-1of7</div>'
+		"template": '<div class="large-1of7" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	},
 
 	"fedojo_1of6": {
@@ -46,7 +69,7 @@ let elements = {
 		"visible_period_from": "",
 		"visible_period_to": "",
 		"content": "",
-		"template": '<div class="large-1of6">large-1of6</div>'
+		"template": '<div class="large-1of6" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	},
 
 	"fedojo_1of5": {
@@ -56,7 +79,7 @@ let elements = {
 		"visible_period_from": "",
 		"visible_period_to": "",
 		"content": "",
-		"template": '<div class="large-1of5">large-1of5</div>'
+		"template": '<div class="large-1of5" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	},
 
 	"fedojo_1of4": {
@@ -66,7 +89,7 @@ let elements = {
 		"visible_period_from": "",
 		"visible_period_to": "",
 		"content": "",
-		"template": '<div class="large-1of4">large-1of4</div>'
+		"template": '<div class="large-1of4" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	},
 
 	"fedojo_1of3":  {
@@ -76,7 +99,7 @@ let elements = {
 		"visible_period_from": "",
 		"visible_period_to": "",
 		"content": "",
-		"template": '<div class="large-1of3">large-1of3</div>'
+		"template": '<div class="large-1of3" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	},
 
 	"fedojo_1of2":  {
@@ -86,6 +109,6 @@ let elements = {
 		"visible_period_from": "",
 		"visible_period_to": "",
 		"content": "",
-		"template": '<div class="large-1of2">large-1of2</div>'
+		"template": '<div class="large-1of2" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	}
 };

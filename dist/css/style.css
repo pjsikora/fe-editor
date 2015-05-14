@@ -133,6 +133,13 @@ header {
   padding-right: 15px;
   float: left; }
 
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px; }
+  .wrapper.b2b {
+    padding: 0; }
+
 .small-1of2 {
   width: 50%; }
   @media  (max-width: 40em) {
@@ -7422,13 +7429,6 @@ header {
   @media  (min-width: 40.063em) and (max-width: 64em) {
     .offset-large-16of16 {
       margin-left: 0; } }
-
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px; }
-  .wrapper.b2b {
-    padding: 0; }
 
 .button {
   height: 30px;

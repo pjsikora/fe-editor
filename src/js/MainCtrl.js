@@ -6,6 +6,7 @@ class MainCtrl {
 		this.$btnAddElement = document.getElementById("addElement");
 		this.$btnGetJSON = document.getElementById("getJSON");
 		this.$btnGetHTML = document.getElementById("getHTML");
+		this.$btnClearHTML = document.getElementById("clearAll");
 		this.$btnAddElements = document.getElementById("addElements");
 
 		this.$inputContent = document.getElementById("elementContent");
@@ -36,12 +37,14 @@ class MainCtrl {
 	}
 
 	addElement(e) {
-		let newElement = new Element();
-		newElement.createFromTpl(elements[this.$elementsList.value].template, '');
+		let newElement = new Element(),
+				option = this.$elementsList.value,
+				tpl = elements[option].template,
+				prefix = Date.now(),
+				content = this.$inputContent.value ? this.$inputContent.value : 'Empty',
+				el = newElement.createFromTpl(tpl, { prefix: prefix, content : content}); // get
 
-		// console.log();
-
-		this.page.addElement(elements[this.$elementsList.value].template);
+		this.page.addElement(el);
 		this.page.redrawStructure();
 	}
 
@@ -68,5 +71,9 @@ class MainCtrl {
 	generatePrefix() {
 		let prefix = Date.now() / 1000;
 		return prefix;
+	}
+
+	clearHTML() {
+		
 	}
 }
