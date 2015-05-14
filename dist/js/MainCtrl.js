@@ -62,7 +62,7 @@ var MainCtrl = (function () {
 		key: "addElement",
 		value: function addElement(e) {
 
-			console.log();
+			// console.log();
 			var newElement = new Element();
 			newElement.createFromTpl(elements[this.$elementsList.value].template, "");
 
@@ -77,9 +77,9 @@ var MainCtrl = (function () {
 	}, {
 		key: "getHTML",
 		value: function getHTML() {
-			var element = document.getElementById("editorWrapper");
+			// let element = document.getElementById('editorWrapper');
 
-			return element.innerHTML;
+			return "";
 		}
 	}, {
 		key: "getJSON",

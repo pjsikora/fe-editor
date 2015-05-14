@@ -17,6 +17,7 @@
   "devDependencies": {
     "UsefullMixins.sass": "git@github.com:fedojo/usefullmixins-sass.git",
     "MultiGrid.css": "git@github.com:fedojo/multigrid-css.git",
-    "breakpoint-sass": "~2.5.0"
+    "breakpoint-sass": "~2.5.0",
+    "jasmine": "~2.3.4"
   }
 }

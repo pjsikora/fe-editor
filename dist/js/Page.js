@@ -15,12 +15,18 @@ var Page = (function () {
   }
 
   _createClass(Page, [{
+    key: 'init',
+    value: function init() {
+      return 1;
+    }
+  }, {
     key: 'loadStructure',
     value: function loadStructure() {}
   }, {
     key: 'addElement',
     value: function addElement(elementString) {
-      this.contentKeeper.innerHTML += elementString;
+      this.HTMLStructure += elementString;
+      // this.contentKeeper.innerHTML += elementString;
     }
   }, {
     key: 'removeElement',

@@ -42,7 +42,7 @@ class MainCtrl {
 
 	addElement(e) {
 
-		console.log();
+		// console.log();
 		let newElement = new Element();
 		newElement.createFromTpl(elements[this.$elementsList.value].template, '');
 
@@ -57,9 +57,10 @@ class MainCtrl {
 	}
 
 	getHTML() {
-		let element = document.getElementById('editorWrapper');
+		// let element = document.getElementById('editorWrapper');
 
-		return element.innerHTML;
+
+		return '';
 	}
 
 	getJSON() {

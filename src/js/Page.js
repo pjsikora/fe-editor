@@ -6,10 +6,15 @@ class Page {
     	this.contentKeeper = document.getElementById(elementID);
     }
 
+    init() {
+      return 1;
+    }
+
     loadStructure() {}
 
     addElement(elementString) {
-    	this.contentKeeper.innerHTML += elementString;
+      this.HTMLStructure += elementString;
+    	// this.contentKeeper.innerHTML += elementString;
     }
 
     removeElement() {}
@@ -20,6 +25,7 @@ class Page {
     getHTMLstructure() {
       return this.HTMLStructure;
     }
+
     setHTMLstructure(structure) {
       this.HTMLStructure = structure;
     }

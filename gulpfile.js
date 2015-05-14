@@ -1,22 +1,46 @@
 var gulp = require('gulp'),
-sass = require('gulp-sass'),
-jade = require('gulp-jade'),
-server = require('gulp-server-livereload'),
-notify = require('gulp-notify'),
-babel = require("gulp-babel");
+		sass = require('gulp-sass'),
+		jade = require('gulp-jade'),
+		notify = require('gulp-notify'),
+		babel = require("gulp-babel")
+		compass = require('gulp-compass'),
+    minifycss = require('gulp-minify-css'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
+    del = require('del'),
+    webserver = require('gulp-webserver');
 
 
-var paths = {
+var path = {
 	css: 'src/sass/*',
 	jade: 'src/jade/*',
 	js: 'src/js/*',
+
+	dist: 'dist/',
+	test: 'test/'
 };
+
+gulp.task('compass', function () {
+    return gulp.src('src/styles/main.scss')
+        .pipe(compass({
+            sass: 'src/styles',
+            image: 'src/images',
+            css: outputPath + 'css'
+        }))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(minifycss())
+        .pipe(gulp.dest(path.dist + 'css'))
+        .pipe(notify({message: 'Styles compiled'}));
+});
 
 
 gulp.task('watch', function() {
-	gulp.watch(paths.css, ['sass']);
-	gulp.watch(paths.jade, ['jade']);
-	gulp.watch(paths.js, ['babel']);
+	gulp.watch(path.css, ['sass']);
+	gulp.watch(path.jade, ['jade']);
+	gulp.watch(path.js, ['babel']);
+
+	gulp.run('webserver');
 });
 
 
@@ -45,21 +69,53 @@ gulp.task('sass', function() {
 	.pipe(notify("SASS done"));
 });
 
+// Webserver with auto reload
+gulp.task('webserver', function() {
+    gulp.src( path.dist )
+        .pipe(webserver({
+            host:             'localhost',
+            port:             '8001',
+            livereload:       true,
+            directoryListing: false,
+            open: true
+        }))
+        .pipe(notify({ message: 'Webserver is working'}));
+});
+
+// Webserver with auto reload
+gulp.task('webserverTest', function() {
+    gulp.src( './' )
+        .pipe(webserver({
+            host:             'localhost',
+            port:             '8001',
+            livereload:       true,
+            directoryListing: false,
+            open: true
+        }))
+        .pipe(notify({ message: 'Webserver is working'}));
+});
 
 gulp.task('jade', function() {
 	var YOUR_LOCALS = {};
 
-	gulp
-	.src('./src/jade/*.jade')
-	.pipe(jade({
-		locals: YOUR_LOCALS
-	})
-	.on('error', function(err) {
-		console.log(err);
-	}))
-	.pipe(gulp.dest('./dist/'))
-	.pipe(notify("JADE done"))
+	gulp.src('./src/jade/*.jade')
+		.pipe(jade({
+			locals: YOUR_LOCALS
+		})
+		.on('error', function(err) {
+			console.log(err);
+		}))
+		.pipe(gulp.dest(path.dist))
+		.pipe(notify("JADE done"))
+});
+
+gulp.task('clean', function (cb) {
+    del([path.dist + 'css', path.dist + 'js', path.dist + 'img', path.dist + '*.html'], { force: true }, cb)
 });
 
 
-gulp.task('default', ['watch', 'sass', 'jade']);
+
+// Default task
+gulp.task('default', ['clean'], function () {
+    gulp.start('watch', 'sass', 'jade', 'babel');
+});

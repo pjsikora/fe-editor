@@ -1,3 +1,8 @@
-"use strict";
+'use strict';
 
-var struct = {};
+var struct = {
+  'prefix': {
+    'type': 'fedojo_1of2',
+    'content': {}
+  }
+};
