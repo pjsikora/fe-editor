@@ -84,6 +84,26 @@ var elements = {
 		"template": "<div class=\"large-1of5\" data-prefix=\"<% this.prefix %>\"><% this.content %></div>"
 	},
 
+	"fedojo_3of4": {
+		"prefix": "fedojo_3of4",
+		"name": "3of4",
+		"hidden": false,
+		"visible_period_from": "",
+		"visible_period_to": "",
+		"content": "",
+		"template": "<div class=\"large-3of4\" data-prefix=\"<% this.prefix %>\"><% this.content %></div>"
+	},
+
+	"fedojo_2of4": {
+		"prefix": "fedojo_2of4",
+		"name": "2of4",
+		"hidden": false,
+		"visible_period_from": "",
+		"visible_period_to": "",
+		"content": "",
+		"template": "<div class=\"large-2of4\" data-prefix=\"<% this.prefix %>\"><% this.content %></div>"
+	},
+
 	"fedojo_1of4": {
 		"prefix": "fedojo_1of4",
 		"name": "1of4",
@@ -92,6 +112,16 @@ var elements = {
 		"visible_period_to": "",
 		"content": "",
 		"template": "<div class=\"large-1of4\" data-prefix=\"<% this.prefix %>\"><% this.content %></div>"
+	},
+
+	"fedojo_2of3": {
+		"prefix": "fedojo_2of3",
+		"name": "2of3",
+		"hidden": false,
+		"visible_period_from": "",
+		"visible_period_to": "",
+		"content": "",
+		"template": "<div class=\"large-2of3\" data-prefix=\"<% this.prefix %>\"><% this.content %></div>"
 	},
 
 	"fedojo_1of3": {

@@ -8,6 +8,8 @@ class MainCtrl {
 		this.$btnGetHTML = document.getElementById("getHTML");
 		this.$btnClearHTML = document.getElementById("clearAll");
 		this.$btnAddElements = document.getElementById("addElements");
+		this.$btnLoadElements = document.getElementById("loadElements");
+		this.$btnClearElements = document.getElementById("clearAll");
 
 		this.$inputContent = document.getElementById("elementContent");
 
@@ -26,10 +28,19 @@ class MainCtrl {
 		this.$btnAddElement.addEventListener("click", (function(event) { this.addElementsRandomly() }).bind(this));
 		this.$btnGetJSON.addEventListener("click", (function(event) { this.getJSON() }).bind(this));
 		this.$btnGetHTML.addEventListener("click", (function(event) { this.getHTML() }).bind(this));
+		// this.$btnGetHTML.addEventListener("click", (function(event) { this.getHTML() }).bind(this));
+		this.$btnLoadElements.addEventListener("click", (function(event) { this.loadElements() }).bind(this))
+		this.$btnClearElements.addEventListener("click", (function(event) { this.clearHTML() }).bind(this))
 	}
 
 	addElementsRandomly() {
 
+	}
+
+	loadElements() {
+		this.page.setHTMLStructure(initialHTML);
+		this.page.redraw();
+	  // mc.redraw();
 	}
 
 	removeElement(e) {
@@ -45,7 +56,7 @@ class MainCtrl {
 				el = newElement.createFromTpl(tpl, { prefix: prefix, content : content}); // get
 
 		this.page.addElement(el);
-		this.page.redrawStructure();
+		this.page.redraw();
 	}
 
 	showElementOptions() {
@@ -74,6 +85,8 @@ class MainCtrl {
 	}
 
 	clearHTML() {
-		
+
+		this.page.clearHTML();
+		this.page.redraw();
 	}
 }

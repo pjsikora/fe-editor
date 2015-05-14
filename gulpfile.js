@@ -62,6 +62,7 @@ gulp.task('sass', function() {
 		includePaths: [
 		'bower_components/MultiGrid.css/src/sass',
 		'bower_components/UsefullMixins.sass',
+		'bower_components/buttons-sass/src/sass/',
 		'bower_components/breakpoint-sass/stylesheets'
 		]
 	}))

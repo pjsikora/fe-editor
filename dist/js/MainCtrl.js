@@ -16,6 +16,8 @@ var MainCtrl = (function () {
 		this.$btnGetHTML = document.getElementById("getHTML");
 		this.$btnClearHTML = document.getElementById("clearAll");
 		this.$btnAddElements = document.getElementById("addElements");
+		this.$btnLoadElements = document.getElementById("loadElements");
+		this.$btnClearElements = document.getElementById("clearAll");
 
 		this.$inputContent = document.getElementById("elementContent");
 
@@ -46,10 +48,24 @@ var MainCtrl = (function () {
 			this.$btnGetHTML.addEventListener("click", (function (event) {
 				this.getHTML();
 			}).bind(this));
+			// this.$btnGetHTML.addEventListener("click", (function(event) { this.getHTML() }).bind(this));
+			this.$btnLoadElements.addEventListener("click", (function (event) {
+				this.loadElements();
+			}).bind(this));
+			this.$btnClearElements.addEventListener("click", (function (event) {
+				this.clearHTML();
+			}).bind(this));
 		}
 	}, {
 		key: "addElementsRandomly",
 		value: function addElementsRandomly() {}
+	}, {
+		key: "loadElements",
+		value: function loadElements() {
+			this.page.setHTMLStructure(initialHTML);
+			this.page.redraw();
+			// mc.redraw();
+		}
 	}, {
 		key: "removeElement",
 		value: function removeElement(e) {}
@@ -64,7 +80,7 @@ var MainCtrl = (function () {
 			    el = newElement.createFromTpl(tpl, { prefix: prefix, content: content }); // get
 
 			this.page.addElement(el);
-			this.page.redrawStructure();
+			this.page.redraw();
 		}
 	}, {
 		key: "showElementOptions",
@@ -99,7 +115,11 @@ var MainCtrl = (function () {
 		}
 	}, {
 		key: "clearHTML",
-		value: function clearHTML() {}
+		value: function clearHTML() {
+
+			this.page.clearHTML();
+			this.page.redraw();
+		}
 	}]);
 
 	return MainCtrl;

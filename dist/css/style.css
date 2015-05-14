@@ -7434,6 +7434,8 @@ header {
   height: 30px;
   text-transform: uppercase;
   margin-left: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
   margin-right: 5px;
   cursor: pointer;
   background: none;
@@ -7454,6 +7456,40 @@ header {
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
   .button:active {
+    background: #d3d3d3;
+    color: #fff;
+    border-color: #d3d3d3;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
+  .button.full-width {
+    width: 100%; }
+
+.button-text-changer {
+  height: 30px;
+  text-transform: uppercase;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  display: inline-block;
+  color: #fff;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  .button-text-changer:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+  .button-text-changer:active {
     background: #d3d3d3;
     color: #fff;
     border-color: #d3d3d3;

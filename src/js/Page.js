@@ -3,6 +3,7 @@ class Page {
       console.log('Page init');
       this.elementsCollection = {};
       this.HTMLStructure = '';
+      this.JSONStructure = '';
     	this.contentKeeper = document.getElementById(elementID);
     }
 
@@ -22,6 +23,11 @@ class Page {
 
     }
 
+    clearHTML() {
+      this.HTMLStructure = '';
+      // this.HTMLStructure = null;
+    }
+
     getJSONStructure() {
 
     }
@@ -29,7 +35,7 @@ class Page {
 
     }
 
-    redrawStructure() {
+    redraw() {
       this.contentKeeper.innerHTML = this.HTMLStructure;
     }
 

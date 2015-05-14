@@ -12,13 +12,20 @@ html
 			p Easy grid based on
 				a(href="http://dev.fedojo.com/multigrid.css/") MutliGrid.css
 
-			input#elementContent(placeholder="Content")
-			select#elementsList
-			button#addElement.button Add element
-			button#addElements.button Add elements
-			button#getJSON.button Get JSON
-			button#getHTML.button Get HTML
-			button#clearAll.button Clear HTML
+			section
+				textarea#elementContent(placeholder="Content")
+			section
+				select#elementsList
+			section
+				button#addElement.button Add element
+			section
+				button#addElements.button Add elements
+				button#loadElements.button Load elements (from var)
+			section
+				button#getJSON.button Get JSON
+				button#getHTML.button Get HTML
+			section
+				button#clearAll.button Clear HTML
 
 
 		#editorWrapper.row

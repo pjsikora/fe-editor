@@ -11,6 +11,8 @@
 @import "fedojo.mixins";
 
 // fedojo buttons https://github.com/fedojo/buttons-sass
+@import "fedojo.buttons.settings";
+@import "fedojo.buttons.mixins";
 @import "fedojo.buttons";
 
 @import "debug.mode";

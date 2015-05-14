@@ -19,5 +19,8 @@
     "MultiGrid.css": "git@github.com:fedojo/multigrid-css.git",
     "breakpoint-sass": "~2.5.0",
     "jasmine": "~2.3.4"
+  },
+  "dependencies": {
+    "buttons-sass": "git@github.com:fedojo/buttons-sass.git"
   }
 }

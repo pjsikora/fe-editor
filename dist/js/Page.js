@@ -11,6 +11,7 @@ var Page = (function () {
     console.log('Page init');
     this.elementsCollection = {};
     this.HTMLStructure = '';
+    this.JSONStructure = '';
     this.contentKeeper = document.getElementById(elementID);
   }
 
@@ -31,14 +32,20 @@ var Page = (function () {
     key: 'removeElement',
     value: function removeElement() {}
   }, {
+    key: 'clearHTML',
+    value: function clearHTML() {
+      this.HTMLStructure = '';
+      // this.HTMLStructure = null;
+    }
+  }, {
     key: 'getJSONStructure',
     value: function getJSONStructure() {}
   }, {
     key: 'setJSONStructure',
     value: function setJSONStructure() {}
   }, {
-    key: 'redrawStructure',
-    value: function redrawStructure() {
+    key: 'redraw',
+    value: function redraw() {
       this.contentKeeper.innerHTML = this.HTMLStructure;
     }
   }, {
