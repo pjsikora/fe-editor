@@ -21,9 +21,6 @@ var Page = (function () {
       return 1;
     }
   }, {
-    key: 'loadStructure',
-    value: function loadStructure() {}
-  }, {
     key: 'addElement',
     value: function addElement(elementString) {
       this.HTMLStructure += elementString;
@@ -35,13 +32,16 @@ var Page = (function () {
     key: 'clearHTML',
     value: function clearHTML() {
       this.HTMLStructure = '';
-      // this.HTMLStructure = null;
     }
   }, {
     key: 'getJSONStructure',
+
+    // TODO
     value: function getJSONStructure() {}
   }, {
     key: 'setJSONStructure',
+
+    // TODO
     value: function setJSONStructure() {}
   }, {
     key: 'redraw',

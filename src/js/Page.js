@@ -11,10 +11,6 @@ class Page {
       return 1;
     }
 
-    loadStructure() {
-
-    }
-
     addElement(elementString) {
       this.HTMLStructure += elementString;
     }
@@ -25,12 +21,14 @@ class Page {
 
     clearHTML() {
       this.HTMLStructure = '';
-      // this.HTMLStructure = null;
     }
 
+    // TODO
     getJSONStructure() {
 
     }
+
+    // TODO
     setJSONStructure() {
 
     }
@@ -42,6 +40,7 @@ class Page {
     getHTMLStructure() {
       return this.HTMLStructure;
     }
+
     addHTMLStructure(structure) {
       this.HTMLStructure += structure;
     }

@@ -28,9 +28,16 @@ var MainCtrl = (function () {
 		}
 
 		this.bindEvents();
+		this.initContent();
 	}
 
 	_createClass(MainCtrl, [{
+		key: "initContent",
+		value: function initContent() {
+			this.page.setHTMLStructure(window.localStorage.getItem("fedojoeditor_html"));
+			this.page.redraw();
+		}
+	}, {
 		key: "bindEvents",
 		value: function bindEvents() {
 			this.$el.addEventListener("click", (function (event) {
@@ -62,9 +69,11 @@ var MainCtrl = (function () {
 	}, {
 		key: "loadElements",
 		value: function loadElements() {
-			this.page.loadHTMLStructure(initialHTML);
+			this.page.addHTMLStructure(initialHTML);
+
+			window.localStorage.setItem("fedojoeditor_html", this.page.getHTMLStructure());
+
 			this.page.redraw();
-			// mc.redraw();
 		}
 	}, {
 		key: "removeElement",
@@ -80,6 +89,9 @@ var MainCtrl = (function () {
 			    el = newElement.createFromTpl(tpl, { prefix: prefix, content: content }); // get
 
 			this.page.addElement(el);
+
+			window.localStorage.setItem("fedojoeditor_html", this.page.getHTMLStructure());
+
 			this.page.redraw();
 		}
 	}, {
@@ -116,8 +128,8 @@ var MainCtrl = (function () {
 	}, {
 		key: "clearHTML",
 		value: function clearHTML() {
-
 			this.page.clearHTML();
+			window.localStorage.setItem("fedojoeditor_html", this.page.getHTMLStructure());
 			this.page.redraw();
 		}
 	}]);

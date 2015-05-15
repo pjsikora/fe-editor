@@ -20,11 +20,18 @@ class MainCtrl {
 		}
 
 		this.bindEvents();
+		this.initContent();
+	}
+
+	initContent() {
+		this.page.setHTMLStructure(window.localStorage.getItem('fedojoeditor_html'));
+		this.page.redraw();
+
 	}
 
 	bindEvents() {
 		this.$el.addEventListener("click", (function(event) { this.removeElement(event) }).bind(this));
-		this.$btnAddElement.addEventListener("click", (function(event) { this.addElement() }).bind(this));
+		this.$btnAddElement.addEventListener("click", (function(event) { this.addElement() }).bind(this) );
 		this.$btnAddElement.addEventListener("click", (function(event) { this.addElementsRandomly() }).bind(this));
 		this.$btnGetJSON.addEventListener("click", (function(event) { this.getJSON() }).bind(this));
 		this.$btnGetHTML.addEventListener("click", (function(event) { this.getHTML() }).bind(this));
@@ -39,9 +46,11 @@ class MainCtrl {
 
 
 	loadElements() {
-		this.page.loadHTMLStructure(initialHTML);
+		this.page.addHTMLStructure(initialHTML);
+
+		window.localStorage.setItem('fedojoeditor_html', this.page.getHTMLStructure());
+
 		this.page.redraw();
-	  // mc.redraw();
 	}
 
 	removeElement(e) {
@@ -57,6 +66,9 @@ class MainCtrl {
 				el = newElement.createFromTpl(tpl, { prefix: prefix, content : content}); // get
 
 		this.page.addElement(el);
+
+		window.localStorage.setItem('fedojoeditor_html', this.page.getHTMLStructure());
+
 		this.page.redraw();
 	}
 
@@ -86,8 +98,8 @@ class MainCtrl {
 	}
 
 	clearHTML() {
-
 		this.page.clearHTML();
+		window.localStorage.setItem('fedojoeditor_html', this.page.getHTMLStructure());
 		this.page.redraw();
 	}
 }
