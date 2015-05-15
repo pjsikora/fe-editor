@@ -62,7 +62,7 @@ var MainCtrl = (function () {
 	}, {
 		key: "loadElements",
 		value: function loadElements() {
-			this.page.setHTMLStructure(initialHTML);
+			this.page.loadHTMLStructure(initialHTML);
 			this.page.redraw();
 			// mc.redraw();
 		}

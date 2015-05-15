@@ -42,6 +42,9 @@ class Page {
     getHTMLStructure() {
       return this.HTMLStructure;
     }
+    addHTMLStructure(structure) {
+      this.HTMLStructure += structure;
+    }
 
     setHTMLStructure(structure) {
       this.HTMLStructure = structure;

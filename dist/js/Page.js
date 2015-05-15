@@ -54,6 +54,11 @@ var Page = (function () {
       return this.HTMLStructure;
     }
   }, {
+    key: 'addHTMLStructure',
+    value: function addHTMLStructure(structure) {
+      this.HTMLStructure += structure;
+    }
+  }, {
     key: 'setHTMLStructure',
     value: function setHTMLStructure(structure) {
       this.HTMLStructure = structure;

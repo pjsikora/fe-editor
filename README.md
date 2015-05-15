@@ -12,7 +12,9 @@ Global install Karma and Karma-CLI (installs both Karma and Karma CLI (Command l
 npm install -g karma karma-cli
 ```
 
-## Thanks to
+## Thanks 2
 My doughter (Amelia) and my wife (Marta) for inspiration and support (I know its hard to support somebody who is working on his laptop when you are sleepping... anyway... Im doing it for you both. You are teh number one).
 
 Thanks Krasimir for his [Templating system](http://krasimirtsonev.com/blog/article/Javascript-template-engine-in-just-20-line)
+
+[Joshua Davis](http://www.joshuadavis.com/) for colors sets.

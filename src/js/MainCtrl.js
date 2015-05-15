@@ -37,8 +37,9 @@ class MainCtrl {
 
 	}
 
+
 	loadElements() {
-		this.page.setHTMLStructure(initialHTML);
+		this.page.loadHTMLStructure(initialHTML);
 		this.page.redraw();
 	  // mc.redraw();
 	}
