@@ -24,7 +24,7 @@ class MainCtrl {
 	}
 
 	initContent() {
-		this.page.setHTMLStructure(window.localStorage.getItem('fedojoeditor_html'));
+		this.page.setHTMLStructure(LSGet('fedojoeditor_html'));
 		this.page.redraw();
 
 	}
@@ -38,6 +38,12 @@ class MainCtrl {
 		// this.$btnGetHTML.addEventListener("click", (function(event) { this.getHTML() }).bind(this));
 		this.$btnLoadElements.addEventListener("click", (function(event) { this.loadElements() }).bind(this))
 		this.$btnClearElements.addEventListener("click", (function(event) { this.clearHTML() }).bind(this))
+
+		// document.querySelectorAll("[data-prefix]").addEventListener('click', (function(event) { this.showElementPrefs() }).bind(this));
+	}
+
+	showElementPrefs(e) {
+		console.log('show prefs');
 	}
 
 	addElementsRandomly() {
@@ -48,7 +54,7 @@ class MainCtrl {
 	loadElements() {
 		this.page.addHTMLStructure(initialHTML);
 
-		window.localStorage.setItem('fedojoeditor_html', this.page.getHTMLStructure());
+		LSSet('fedojoeditor_html', this.page.getHTMLStructure());
 
 		this.page.redraw();
 	}
@@ -67,7 +73,7 @@ class MainCtrl {
 
 		this.page.addElement(el);
 
-		window.localStorage.setItem('fedojoeditor_html', this.page.getHTMLStructure());
+		LSSet('fedojoeditor_html', this.page.getHTMLStructure());
 
 		this.page.redraw();
 	}
@@ -99,7 +105,7 @@ class MainCtrl {
 
 	clearHTML() {
 		this.page.clearHTML();
-		window.localStorage.setItem('fedojoeditor_html', this.page.getHTMLStructure());
+		LSSet('fedojoeditor_html', this.page.getHTMLStructure());
 		this.page.redraw();
 	}
 }

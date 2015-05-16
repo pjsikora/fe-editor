@@ -1,11 +1,9 @@
-class LocalStorage {
-  constructor() {
-    $this.ls = window.localStorage;
-  }
-  set(element, value) {
-    $this.ls.setItem(element, value);
-  }
-  get(element) {
-    return $this.ls.getItem(element);
-  }
+var ls = window.localStorage;
+
+function LSSet(element, value) {
+  ls.setItem(element, value);
+}
+
+function LSGet(element) {
+  return ls.getItem(element);
 }

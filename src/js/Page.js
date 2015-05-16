@@ -15,7 +15,7 @@ class Page {
       this.HTMLStructure += elementString;
     }
 
-    removeElement() {
+    removeElement(prefix) {
 
     }
 

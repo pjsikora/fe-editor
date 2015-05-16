@@ -34,7 +34,7 @@ var MainCtrl = (function () {
 	_createClass(MainCtrl, [{
 		key: "initContent",
 		value: function initContent() {
-			this.page.setHTMLStructure(window.localStorage.getItem("fedojoeditor_html"));
+			this.page.setHTMLStructure(LSGet("fedojoeditor_html"));
 			this.page.redraw();
 		}
 	}, {
@@ -64,6 +64,11 @@ var MainCtrl = (function () {
 			}).bind(this));
 		}
 	}, {
+		key: "showElementPrefs",
+		value: function showElementPrefs(e) {
+			console.log("show prefs");
+		}
+	}, {
 		key: "addElementsRandomly",
 		value: function addElementsRandomly() {}
 	}, {
@@ -71,7 +76,7 @@ var MainCtrl = (function () {
 		value: function loadElements() {
 			this.page.addHTMLStructure(initialHTML);
 
-			window.localStorage.setItem("fedojoeditor_html", this.page.getHTMLStructure());
+			LSSet("fedojoeditor_html", this.page.getHTMLStructure());
 
 			this.page.redraw();
 		}
@@ -90,7 +95,7 @@ var MainCtrl = (function () {
 
 			this.page.addElement(el);
 
-			window.localStorage.setItem("fedojoeditor_html", this.page.getHTMLStructure());
+			LSSet("fedojoeditor_html", this.page.getHTMLStructure());
 
 			this.page.redraw();
 		}
@@ -129,10 +134,12 @@ var MainCtrl = (function () {
 		key: "clearHTML",
 		value: function clearHTML() {
 			this.page.clearHTML();
-			window.localStorage.setItem("fedojoeditor_html", this.page.getHTMLStructure());
+			LSSet("fedojoeditor_html", this.page.getHTMLStructure());
 			this.page.redraw();
 		}
 	}]);
 
 	return MainCtrl;
 })();
+
+// document.querySelectorAll("[data-prefix]").addEventListener('click', (function(event) { this.showElementPrefs() }).bind(this));

@@ -27,7 +27,7 @@ var Page = (function () {
     }
   }, {
     key: 'removeElement',
-    value: function removeElement() {}
+    value: function removeElement(prefix) {}
   }, {
     key: 'clearHTML',
     value: function clearHTML() {
