@@ -1,5 +1,6 @@
-# FE-Editor
 ![fedojo logo](http://fedojo.com/wp-content/uploads/2015/05/fedojo-logo.png)
+
+# FE-Editor
 [Example](http://dev.fedojo.com/fe-editor "FE Editor")
 
 ## Short description
