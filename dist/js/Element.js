@@ -8,14 +8,9 @@ var Element = (function () {
     function Element(config) {
         _classCallCheck(this, Element);
 
-        this.elements = [];
-        this.elHTML;
-        this.selector = '';
         this.$addElement;
         this.$removeElement;
         this.$editElement;
-
-        // this.elementPrefix = config.prefix ? config.prefix : '000';
     }
 
     _createClass(Element, [{

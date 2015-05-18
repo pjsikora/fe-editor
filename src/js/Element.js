@@ -1,13 +1,13 @@
 class Element {
+    contentElements: [];
+    elHTML: '';
+    selector: '';
+
+
     constructor(config) {
-        this.elements = [];
-        this.elHTML;
-        this.selector = '';
         this.$addElement;
         this.$removeElement;
         this.$editElement;
-
-        // this.elementPrefix = config.prefix ? config.prefix : '000';
     }
 
 

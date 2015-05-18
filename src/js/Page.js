@@ -1,9 +1,10 @@
 class Page {
+    elementsCollection : {};
+    HTMLStructure: '';
+    JSONStructure: '';
+
     constructor(elementID) {
       console.log('Page init');
-      this.elementsCollection = {};
-      this.HTMLStructure = '';
-      this.JSONStructure = '';
     	this.contentKeeper = document.getElementById(elementID);
     }
 

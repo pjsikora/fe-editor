@@ -40,28 +40,31 @@ var MainCtrl = (function () {
 	}, {
 		key: "bindEvents",
 		value: function bindEvents() {
+			var _this = this;
+
 			this.$el.addEventListener("click", (function (event) {
 				this.removeElement(event);
 			}).bind(this));
-			this.$btnAddElement.addEventListener("click", (function (event) {
-				this.addElement();
-			}).bind(this));
-			this.$btnAddElement.addEventListener("click", (function (event) {
-				this.addElementsRandomly();
-			}).bind(this));
-			this.$btnGetJSON.addEventListener("click", (function (event) {
-				this.getJSON();
-			}).bind(this));
-			this.$btnGetHTML.addEventListener("click", (function (event) {
-				this.getHTML();
-			}).bind(this));
-			// this.$btnGetHTML.addEventListener("click", (function(event) { this.getHTML() }).bind(this));
-			this.$btnLoadElements.addEventListener("click", (function (event) {
-				this.loadElements();
-			}).bind(this));
-			this.$btnClearElements.addEventListener("click", (function (event) {
-				this.clearHTML();
-			}).bind(this));
+			this.$btnAddElement.addEventListener("click", function (event) {
+				return _this.addElement();
+			});
+			this.$btnAddElement.addEventListener("click", function (event) {
+				return _this.addElementRandomly();
+			});
+			this.$btnGetJSON.addEventListener("click", function (event) {
+				return _this.getJSON();
+			});
+			this.$btnGetHTML.addEventListener("click", function (event) {
+				return _this.getHTML();
+			});
+			this.$btnLoadElements.addEventListener("click", function (event) {
+				return _this.loadElements();
+			});
+			this.$btnClearElements.addEventListener("click", function (event) {
+				return _this.clearHTML();
+			});
+
+			// document.querySelectorAll("[data-prefix]").addEventListener('click', (function(event) { this.showElementPrefs() }).bind(this));
 		}
 	}, {
 		key: "showElementPrefs",
@@ -141,5 +144,3 @@ var MainCtrl = (function () {
 
 	return MainCtrl;
 })();
-
-// document.querySelectorAll("[data-prefix]").addEventListener('click', (function(event) { this.showElementPrefs() }).bind(this));

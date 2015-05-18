@@ -9,9 +9,6 @@ var Page = (function () {
     _classCallCheck(this, Page);
 
     console.log('Page init');
-    this.elementsCollection = {};
-    this.HTMLStructure = '';
-    this.JSONStructure = '';
     this.contentKeeper = document.getElementById(elementID);
   }
 

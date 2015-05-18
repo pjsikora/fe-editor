@@ -31,13 +31,12 @@ class MainCtrl {
 
 	bindEvents() {
 		this.$el.addEventListener("click", (function(event) { this.removeElement(event) }).bind(this));
-		this.$btnAddElement.addEventListener("click", (function(event) { this.addElement() }).bind(this) );
-		this.$btnAddElement.addEventListener("click", (function(event) { this.addElementsRandomly() }).bind(this));
-		this.$btnGetJSON.addEventListener("click", (function(event) { this.getJSON() }).bind(this));
-		this.$btnGetHTML.addEventListener("click", (function(event) { this.getHTML() }).bind(this));
-		// this.$btnGetHTML.addEventListener("click", (function(event) { this.getHTML() }).bind(this));
-		this.$btnLoadElements.addEventListener("click", (function(event) { this.loadElements() }).bind(this))
-		this.$btnClearElements.addEventListener("click", (function(event) { this.clearHTML() }).bind(this))
+		this.$btnAddElement.addEventListener("click", (event) => this.addElement());
+		this.$btnAddElement.addEventListener("click", (event) => this.addElementRandomly());
+		this.$btnGetJSON.addEventListener("click", (event) => this.getJSON());
+		this.$btnGetHTML.addEventListener("click", (event) => this.getHTML());
+		this.$btnLoadElements.addEventListener("click", (event) => this.loadElements());
+		this.$btnClearElements.addEventListener("click", (event) => this.clearHTML());
 
 		// document.querySelectorAll("[data-prefix]").addEventListener('click', (function(event) { this.showElementPrefs() }).bind(this));
 	}
