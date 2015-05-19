@@ -1,4 +1,4 @@
-let elements = {
+let gridElements = {
 	"fedojo_1of12": {
 		"prefix": "fedojo_1of12",
 		"name": "1of12",

@@ -28,6 +28,15 @@ class Element {
       return new Function(code.replace(/[\r\t\n]/g, '')).apply(options);
     }
 
+    /**
+    TODO based on
+    https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings
+    */
+    createFromTplES6(template, options) {
+        var string;
+        return string;
+    }
+
     bindEvents() {
         this.$addElement.addEventListener();
         this.$removeElement.addEventListener();
