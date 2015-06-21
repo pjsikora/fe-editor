@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/js/elements/Custom.es6"],"names":[],"mappings":";;;;;;AAAO,MAAI,cAAc,GAAG,EAAE,CAAC;UAApB,cAAc,GAAd,cAAc","file":"src/js/elements/Custom.es6","sourcesContent":["export let customElements = {};\n"]}

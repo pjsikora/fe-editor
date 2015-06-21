@@ -1,0 +1,6 @@
+export Window {
+    constructor(contnet) {
+
+    }
+
+}

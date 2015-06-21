@@ -4,7 +4,6 @@ html
 
 		link(rel="stylesheet", href="css/style.css")
 	body
-
 		header
 			h1 FE-Editor
 			p Based on EcmaScript 6 and transpiler Babel
@@ -45,8 +44,6 @@ html
 						button#clearAll.button Clear HTML
 
 
-
-
 		.debug
 			#editorWrapper.row
 
@@ -60,14 +57,8 @@ html
 
 		#windowOverlay
 			#window
+		script(src="https://xplatform.org/cdn/babel-core/4.7.16/browser-polyfill.js")
+		script(data-main="js/init", src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.18/require.js")
 
-		script(src="js/elements.GridElements.js")
-		script(src="js/initialhtml.js")
 
-		script(src="js/LocalStorage.js")
-		script(src="js/EditorHelpers.js")
-		script(src="js/Page.js")
-		script(src="js/Element.js")
 
-		script(src="js/MainCtrl.js")
-		script(src="js/init.js")

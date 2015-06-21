@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/js/init.es6"],"names":[],"mappings":";;;AAEA,GAAC,YAAW;AACV,QAAI,EAAE,GAAG,iBAHF,QAAQ,EAGQ,CAAC;GACzB,CAAA,EAAG,CAAC","file":"src/js/init.es6","sourcesContent":["import { MainCtrl } from \"app/MainCtrl\";\n\n(function() {\n  var mc = new MainCtrl();\n})();\n\n"]}
