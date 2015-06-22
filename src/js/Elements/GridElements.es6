@@ -1,4 +1,4 @@
-export let gridElements = {
+export let GridElements = {
 	"fedojo_1of12": {
 		"prefix": "fedojo_1of12",
 		"name": "1of12",
@@ -9,7 +9,6 @@ export let gridElements = {
 
 		"template": '<div class="large-1of12" data-prefix="<% this.prefix %>"><% this.content %></div>'
 	},
-
 	"fedojo_1of11": {
 		"prefix": "fedojo_1of11",
 		"name": "1of11",

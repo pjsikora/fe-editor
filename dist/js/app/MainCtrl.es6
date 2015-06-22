@@ -1,7 +1,7 @@
 define(["exports"], function (exports) {
 	"use strict";
 
-	define(["exports", "app/Page", "app/helpers/initialhtml", "app/LocalStorage"], function (exports, _appPage, _appHelpersInitialhtml, _appLocalStorage) {
+	define(["exports", "app/Page", "app/Element", "\telements/GridElements", "app/helpers/initialhtml", "app/LocalStorage"], function (exports, _appPage, _appElement, _elementsGridElements, _appHelpersInitialhtml, _appLocalStorage) {
 		"use strict";
 
 		Object.defineProperty(exports, "__esModule", {
@@ -38,20 +38,23 @@ define(["exports"], function (exports) {
 				this.$btnAddElements = document.getElementById("addElements");
 				this.$btnLoadElements = document.getElementById("loadElements");
 				this.$btnClearElements = document.getElementById("clearAll");
-
 				this.$inputContent = document.getElementById("elementContent");
 
 				this.$el = document.querySelector("div");
 
-				//for (var key in elements) {
-				//	this.$elementsList.innerHTML += '<option value="'+key+'">'+elements[key].name+'</option>';
-				//}
-
+				this.listElements();
 				this.bindEvents();
 				this.initContent();
 			}
 
 			_createClass(MainCtrl, [{
+				key: "listElements",
+				value: function listElements() {
+					for (var key in _elementsGridElements.GridElements) {
+						this.$elementsList.innerHTML += "<option value=\"" + key + "\">" + _elementsGridElements.GridElements[key].name + "</option>";
+					}
+				}
+			}, {
 				key: "initContent",
 				value: function initContent() {
 					this.page.setHTMLStructure(_appLocalStorage.LSGet("fedojo_editor_html"));
@@ -83,8 +86,6 @@ define(["exports"], function (exports) {
 					this.$btnClearElements.addEventListener("click", function (event) {
 						return _this.clearHTML();
 					});
-
-					// document.querySelectorAll("[data-prefix]").addEventListener('click', (function(event) { this.showElementPrefs() }).bind(this));
 				}
 			}, {
 				key: "showElementPrefs",
@@ -109,7 +110,7 @@ define(["exports"], function (exports) {
 			}, {
 				key: "addElement",
 				value: function addElement(e) {
-					var newElement = new Element(),
+					var newElement = new _appElement.Element(),
 					    option = this.$elementsList.value,
 					    tpl = elements[option].template,
 					    prefix = Date.now(),
@@ -138,8 +139,9 @@ define(["exports"], function (exports) {
 					this.page.redrawStructure();
 				}
 			}, {
-				key: "getElementsHTML",
-				value: function getElementsHTML() {
+				key: "getHTML",
+				value: function getHTML() {
+					console.log(this.page.getHTMLStructure());
 					return this.page.getHTMLStructure();
 				}
 			}, {

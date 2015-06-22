@@ -1,6 +1,8 @@
 class Element {
 
     constructor(config) {
+        this.cfg = config || null;
+
         this.$addElement;
         this.$removeElement;
         this.$editElement;
@@ -8,6 +10,9 @@ class Element {
         this.contentElements: [];
         this.elHTML: '';
         this.selector: '';
+
+        this.elementTemplate: `<div></div>`;
+
     }
 
     // Thanks Krasimir http://krasimirtsonev.com/blog/article/Javascript-template-engine-in-just-20-line
@@ -43,6 +48,10 @@ class Element {
     }
 
     prepareElement() {
+
+    }
+
+    renderElement() {
 
     }
 }

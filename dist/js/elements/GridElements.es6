@@ -7,7 +7,7 @@ define(["exports"], function (exports) {
 		Object.defineProperty(exports, "__esModule", {
 			value: true
 		});
-		var gridElements = {
+		var GridElements = {
 			"fedojo_1of12": {
 				"prefix": "fedojo_1of12",
 				"name": "1of12",
@@ -18,7 +18,6 @@ define(["exports"], function (exports) {
 
 				"template": "<div class=\"large-1of12\" data-prefix=\"<% this.prefix %>\"><% this.content %></div>"
 			},
-
 			"fedojo_1of11": {
 				"prefix": "fedojo_1of11",
 				"name": "1of11",
@@ -151,7 +150,7 @@ define(["exports"], function (exports) {
 				"template": "<div class=\"large-1of2\" data-prefix=\"<% this.prefix %>\"><% this.content %></div>"
 			}
 		};
-		exports.gridElements = gridElements;
+		exports.GridElements = GridElements;
 	});
 	//# sourceMappingURL=GridElements.js.map
 });

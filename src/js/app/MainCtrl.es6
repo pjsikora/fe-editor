@@ -1,4 +1,6 @@
 import { Page } from "app/Page";
+import { Element } from "app/Element";
+import { GridElements } from "	elements/GridElements";
 import { initialHTML } from "app/helpers/initialhtml";
 import { LSGet, LSSet } from "app/LocalStorage";
 
@@ -15,23 +17,24 @@ export class MainCtrl {
 		this.$btnAddElements = document.getElementById("addElements");
 		this.$btnLoadElements = document.getElementById("loadElements");
 		this.$btnClearElements = document.getElementById("clearAll");
-
 		this.$inputContent = document.getElementById("elementContent");
 
 		this.$el = document.querySelector('div');
 
-		//for (var key in elements) {
-		//	this.$elementsList.innerHTML += '<option value="'+key+'">'+elements[key].name+'</option>';
-		//}
-
+		this.listElements();
 		this.bindEvents();
 		this.initContent();
+	}
+
+	listElements() {
+		for (var key in GridElements) {
+			this.$elementsList.innerHTML += '<option value="'+key+'">'+GridElements[key].name+'</option>';
+		}
 	}
 
 	initContent() {
 		this.page.setHTMLStructure(LSGet('fedojo_editor_html'));
 		this.page.redraw();
-
 	}
 
 	bindEvents() {
@@ -42,8 +45,6 @@ export class MainCtrl {
 		this.$btnGetHTML.addEventListener("click", (event) => this.getHTML());
 		this.$btnLoadElements.addEventListener("click", (event) => this.loadElements());
 		this.$btnClearElements.addEventListener("click", (event) => this.clearHTML());
-
-		// document.querySelectorAll("[data-prefix]").addEventListener('click', (function(event) { this.showElementPrefs() }).bind(this));
 	}
 
 	showElementPrefs(e) {
@@ -69,11 +70,11 @@ export class MainCtrl {
 
 	addElement(e) {
 		let newElement = new Element(),
-				option = this.$elementsList.value,
-				tpl = elements[option].template,
-				prefix = Date.now(),
-				content = this.$inputContent.value ? this.$inputContent.value : 'Empty',
-				el = newElement.createFromTpl(tpl, { prefix: prefix, content : content}); // get
+			option = this.$elementsList.value,
+			tpl = elements[option].template,
+			prefix = Date.now(),
+			content = this.$inputContent.value ? this.$inputContent.value : 'Empty',
+			el = newElement.createFromTpl(tpl, { prefix: prefix, content : content}); // get
 
 		this.page.addElement(el);
 
@@ -94,7 +95,8 @@ export class MainCtrl {
 		this.page.redrawStructure();
 	}
 
-	getElementsHTML() {
+	getHTML() {
+		console.log(this.page.getHTMLStructure());
 		return this.page.getHTMLStructure();
 	}
 
